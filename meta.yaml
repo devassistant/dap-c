@@ -11,6 +11,7 @@ bugreports: https://github.com/devassistant/dap-c/issues
 dependencies:
   - common_args
   - eclipse
+  - git
   - vim
 description: |
     Kickstarts new C project and more C related assistants
