@@ -1,5 +1,5 @@
 package_name: c
-version: 0.10.0dev
+version: 0.10.0
 license: GPLv2+
 authors:
   - Jonathan Wakely <jwakely@redhat.com>
@@ -12,6 +12,7 @@ dependencies:
   - common_args
   - eclipse
   - git
+  - github
   - vim
 description: |
     Kickstarts new C project and more C related assistants
