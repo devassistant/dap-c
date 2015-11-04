@@ -64,11 +64,16 @@ run:
   - use: git.init_add_commit.run
 - else:
   - cl: cd "$lowername"
-  - log_i: 'Project already exists'  
+  - log_i: 'Project already exists'
+- log_i: 'Make autoconf macrodir'
+- cl_i: mkdir -p m4
 - log_i: 'Run autoreconf'
 - cl_i: autoreconf --install
+- log_i: 'Make build directory'
+- cl_i: mkdir -p build
 - log_i: 'Run configure script'
-- cl_i: ./configure
+- cl_i: cd build
+- cl_i: ../configure
 - cl_i: make clean
 - log_i: 'Compiling sources'
 - cl_i: make
@@ -78,7 +83,7 @@ run:
 - log_i: 'source file using autotools'
 - log_i: 'More information about autotools can be found here:'
 - log_i: 'automake: http://www.gnu.org/software/automake/manual/automake.html'
-- log_i: 'autoconf: http://www.gnu.org/software/autoconf/manual/autoconf.html' 
+- log_i: 'autoconf: http://www.gnu.org/software/autoconf/manual/autoconf.html'
 - if defined $vim:
   - use: vim.run
 - if defined $build:
